@@ -27,6 +27,10 @@ struct CardView: View {
             RoundedRectangle(cornerRadius: 15)
             .stroke(lineWidth: 3)
             
+            RoundedRectangle(cornerRadius: 15)
+                .fill()
+                .foregroundColor(.white)
+            
             Text("🚀")
                 .bold()
                 .font(.largeTitle)
