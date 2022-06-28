@@ -20,24 +20,32 @@ struct ContentView: View {
                 }
             }
             HStack {
-                Button(action: {
-                    if (self.emojiCount != 4) { self.emojiCount -= 1 }
-                    else { return }
-                }, label: {
-                    Text("⊖")
-                })
+                remove
                 Spacer()
-                Button(action: {
-                    if (self.emojiCount < self.emojis.count) { self.emojiCount += 1 }
-                    else { return }
-                }, label: {
-                    Text("⊕")
-                })
+                add
             }
             .font(.largeTitle)
         }
         .padding()
         .foregroundColor(.purple)
+    }
+    
+    var remove: some View {
+        Button(action: {
+            if (self.emojiCount != 4) { self.emojiCount -= 1 }
+            else { return }
+        }, label: {
+            Text("⊖")
+        })
+    }
+    
+    var add: some View {
+        Button(action: {
+            if (self.emojiCount < self.emojis.count) { self.emojiCount += 1 }
+            else { return }
+        }, label: {
+            Text("⊕")
+        })
     }
 }
 
