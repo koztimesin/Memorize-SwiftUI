@@ -11,37 +11,26 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            ZStack {
-                    RoundedRectangle(cornerRadius: 15)
-                    .stroke(lineWidth: 3)
-                    
-                    Text("Hello, World!")
-                        .bold()
-                }
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                .stroke(lineWidth: 3)
-                
-                Text("Hello, World!")
-                    .bold()
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                .stroke(lineWidth: 3)
-                
-                Text("Hello, World!")
-                    .bold()
-            }
-            ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                .stroke(lineWidth: 3)
-                
-                Text("Hello, World!")
-                    .bold()
-            }
+            CardView()
+            CardView()
+            CardView()
+            CardView()
         }
         .padding()
         .foregroundColor(.purple)
+    }
+}
+
+struct CardView: View {
+    var body: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 15)
+            .stroke(lineWidth: 3)
+            
+            Text("🚀")
+                .bold()
+                .font(.largeTitle)
+        }
     }
 }
 
