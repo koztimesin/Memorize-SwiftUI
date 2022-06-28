@@ -22,7 +22,7 @@ struct ContentView: View {
 }
 
 struct CardView: View {
-    var isFaceUp: Bool = false
+    @State var isFaceUp: Bool = false
     let shape = RoundedRectangle(cornerRadius: 15)
     
     var body: some View {
@@ -34,6 +34,9 @@ struct CardView: View {
             } else {
                 shape.fill()
             }
+        }
+        .onTapGesture {
+            self.isFaceUp = !self.isFaceUp
         }
     }
 }
