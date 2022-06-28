@@ -21,13 +21,15 @@ struct ContentView: View {
             }
             HStack {
                 Button(action: {
-                    self.emojiCount -= 1
+                    if (self.emojiCount != 4) { self.emojiCount -= 1 }
+                    else { return }
                 }, label: {
                     Text("⊖")
                 })
                 Spacer()
                 Button(action: {
-                    self.emojiCount += 1
+                    if (self.emojiCount < self.emojis.count) { self.emojiCount += 1 }
+                    else { return }
                 }, label: {
                     Text("⊕")
                 })
