@@ -27,22 +27,20 @@ struct ContentView: View {
             .font(.largeTitle)
         }
         .padding()
-        .foregroundColor(.purple)
+        .foregroundColor(.blue)
     }
     
     var remove: some View {
         Button(action: {
             if (self.emojiCount != 4) { self.emojiCount -= 1 }
-            else { return }
         }, label: {
-            Text("⊖")
+            Text("⊖").foregroundColor(.red)
         })
     }
     
     var add: some View {
         Button(action: {
             if (self.emojiCount < self.emojis.count) { self.emojiCount += 1 }
-            else { return }
         }, label: {
             Text("⊕")
         })
